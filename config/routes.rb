@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'home#index'
   
-  resources :manufacturers
+  resources :manufacturers, only: [:index, :show, :new, :create]
 end
