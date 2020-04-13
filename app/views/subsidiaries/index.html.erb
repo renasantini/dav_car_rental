@@ -1,5 +1,7 @@
 <h1>Filiais</h1>
 
+<li><%= link_to 'Registrar nova filial', new_subsidiary_path %></li>
+
 <% if @subsidiaries.empty? %>
     <p>Nenhuma filial cadastrada.</p>
 <% else %>

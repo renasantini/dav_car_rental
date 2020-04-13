@@ -20,7 +20,7 @@ feature 'Admin register subsidiary' do
 
     expect(current_path).to eq subsidiary_path(Subsidiary.last.id)
     expect(page).to have_content('Campinas')
-    expect(page).to have_content('00.000.000/0001-00')
+    expect(page).to have_content('00.000.000/0001-01')
     expect(page).to have_content('Av. Imperatriz Dona Tereza Cristina, 11')
     expect(page).to have_link('Voltar')
   end

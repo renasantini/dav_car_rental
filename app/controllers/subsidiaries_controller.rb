@@ -8,15 +8,19 @@ class SubsidiariesController < ApplicationController
         @subsidiary = Subsidiary.find(id)
     end
     
-    #def new
-    #    @manufacturer = Manufacturer.new
-    #end
+    def new
+       @subsidiary = Subsidiary.new
+    end
 
-    #def create
-    #    @manufacturer = Manufacturer.new
-    #    @manufacturer.name = params[:manufacturer][:name]
-    #    @manufacturer.save
-    #    redirect_to @manufacturer
-    #end
+    def create
+        @subsidiary = Subsidiary.new(subsidiary_params)
+        @subsidiary.save
+        redirect_to @subsidiary
+    end
 
+    private
+
+  def subsidiary_params
+    params.require(:subsidiary).permit(:name, :cnpj, :address)
+  end
 end
