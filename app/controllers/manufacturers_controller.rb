@@ -13,7 +13,7 @@ class ManufacturersController < ApplicationController
     end
 
     def create
-        @manufacturer = Manufacturer.new(params.require(:manufacturer).permit(:name))
+        @manufacturer = Manufacturer.new(manufacturer_params)
         if @manufacturer.save
             flash[:notice] = 'Fabricante criado com sucesso'
             redirect_to @manufacturer
@@ -23,6 +23,24 @@ class ManufacturersController < ApplicationController
     end
 
     def edit
+        @manufacturer = Manufacturer.find(params[:id])
     end
-    
+
+    def update
+        @manufacturer = Manufacturer.find(params[:id])
+        
+        if @manufacturer.update(manufacturer_params)
+            flash[:notice] = 'Fabricante editado com sucesso'
+            redirect_to @manufacturer
+        else
+            render :edit
+        end
+    end
+
+    private
+
+    def manufacturer_params
+        params.require(:manufacturer).permit(:name)
+      end
+      
 end
