@@ -1,3 +1,4 @@
 <h1><%= @manufacturer.name %></h1>
 <li><%= link_to 'Editar', edit_manufacturer_path(@manufacturer) %></li>
+<li><%= link_to 'Apagar fabricante', manufacturer_path(@manufacturer), method: :delete  %></li>
 <li><%= link_to 'Voltar', manufacturers_path %></li>
