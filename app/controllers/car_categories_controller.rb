@@ -1,11 +1,11 @@
 class CarCategoriesController < ApplicationController
   def index
-      @car_categories = CarCategory.all
+    @car_categories = CarCategory.all
   end
   
   def show
-      id = params[:id]
-      @car_category = CarCategory.find(id)
+    id = params[:id]
+    @car_category = CarCategory.find(id)
   end
     
   def new
@@ -23,5 +23,5 @@ class CarCategoriesController < ApplicationController
   def car_category_params
     params.require(:car_category).permit(:name, :daily_rate, :car_insurance, :third_party_insurance)
   end
-  
+
 end

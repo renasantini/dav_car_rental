@@ -3,13 +3,13 @@
 <li><%= link_to 'Registrar nova categoria', new_car_category_path %></li>
 
 <% if @car_categories.empty? %>
-    <p>Nenhuma categoria de veículo cadastrada.</p>
+  <p>Nenhuma categoria de veículo cadastrada.</p>
 <% else %>
-    <ul>
-        <% @car_categories.each do |c| %>
-            <li><%= link_to c.name, c %></li>
-        <% end %>
-    </ul>
+  <ul>
+    <% @car_categories.each do |c| %>
+      <li><%= link_to c.name, c %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <li><%= link_to 'Voltar', root_path %></li>

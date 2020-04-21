@@ -3,14 +3,15 @@
 <li><%= link_to 'Registrar novo fabricante', new_manufacturer_path %></li>
 
 <% if @manufacturers.empty? %>
-    <p>Nenhum fabricante cadastrado</p>
+  <p>Nenhum fabricante cadastrado</p>
 <% else %>
-    <ul>
-        <% @manufacturers.each do |m| %>
-            <li><%= link_to m.name, m %></li>
-        <% end %>
-    </ul>
+  <ul>
+    <% @manufacturers.each do |m| %>
+        <li><%= link_to m.name, m %></li>
+    <% end %>
+  </ul>
 <% end %>
+
 <li><%= link_to 'Voltar', root_path %></li>
 
 

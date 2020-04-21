@@ -3,14 +3,15 @@
 <li><%= link_to 'Registrar nova filial', new_subsidiary_path %></li>
 
 <% if @subsidiaries.empty? %>
-    <p>Nenhuma filial cadastrada.</p>
+  <p>Nenhuma filial cadastrada.</p>
 <% else %>
-    <ul>
-        <% @subsidiaries.each do |s| %>
-            <li><%= link_to s.name, s %></li>
-        <% end %>
-    </ul>
+  <ul>
+    <% @subsidiaries.each do |s| %>
+      <li><%= link_to s.name, s %></li>
+    <% end %>
+  </ul>
 <% end %>
+
 <li><%= link_to 'Voltar', root_path %></li>
 
 
