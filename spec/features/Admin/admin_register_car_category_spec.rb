@@ -14,16 +14,16 @@ feature 'Admin register car category' do
     click_on 'Registrar nova categoria'
 
     fill_in 'Nome', with: 'Compacto'
-    fill_in 'Diária', with: '100,00'
-    fill_in 'Seguro', with: '25,00'
-    fill_in 'Seguro para terceiros', with: '10,00'
+    fill_in 'Diária', with: '100'
+    fill_in 'Seguro', with: '25'
+    fill_in 'Seguro para terceiros', with: '10'
     click_on 'Enviar'
 
     expect(current_path).to eq car_category_path(CarCategory.last.id)
     expect(page).to have_content('Compacto')
-    expect(page).to have_content('100')
-    expect(page).to have_content('25')
-    expect(page).to have_content('10')
+    expect(page).to have_content('R$ 100,00')
+    expect(page).to have_content('R$ 25,00')
+    expect(page).to have_content('R$ 10,00')
     expect(page).to have_link('Voltar')
   end
   
@@ -37,9 +37,9 @@ feature 'Admin register car category' do
 
     expect(current_path).to eq car_category_path(CarCategory.last.id)
     expect(page).to have_content('Sedan')
-    expect(page).to have_content('140')
-    expect(page).to have_content('30')
-    expect(page).to have_content('20')
+    expect(page).to have_content('R$ 140,00')
+    expect(page).to have_content('R$ 30,00')
+    expect(page).to have_content('R$ 20,00')
     expect(page).to have_link('Voltar')
   end
 end
