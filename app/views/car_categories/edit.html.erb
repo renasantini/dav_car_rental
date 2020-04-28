@@ -1,4 +1,4 @@
-<h1>Registrar categoria de veículo</h1>
+<h1>Editar categoria de veículo</h1>
 
 <div>
   <% @car_category.errors.full_messages.each do |message|%>
@@ -12,15 +12,15 @@
     </p>
     <p>
       <%= f.label :daily_rate, 'Diária' %>
-      <%= f.number_field :daily_rate, :value => 140 %>
+      <%= f.number_field :daily_rate %>
     </p>
     <p>
       <%= f.label :car_insurance, 'Seguro' %>
-      <%= f.number_field :car_insurance , :value => 30%>
+      <%= f.number_field :car_insurance %>
     </p>
     <p>
       <%= f.label :third_party_insurance, 'Seguro para terceiros' %>
-      <%= f.number_field :third_party_insurance, :value => 20 %>
+      <%= f.number_field :third_party_insurance %>
     </p>
     <%= f.submit 'Enviar' %>
   <% end %>
