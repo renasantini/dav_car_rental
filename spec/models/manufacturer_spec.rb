@@ -11,7 +11,7 @@ describe Manufacturer, type: :model do
                                                     'ficar em branco')
     end
 
-    it 'name must be uniq' do
+    it 'name must be unique' do
       Manufacturer.create!(name: 'Honda')
       manufacturer = Manufacturer.new(name: 'Honda')
 

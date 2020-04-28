@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Admin view subsidiaries' do
   scenario 'successfully' do
-    Subsidiary.create!(name: 'Campinas', cnpj: '00.000.000/0001-00', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
-    Subsidiary.create!(name: 'Guarulhos', cnpj: '00.000.000/0001-00', address: 'Rod. Hélio Smidt, s/nº')
+    Subsidiary.create!(name: 'Campinas', cnpj: '32.685.705/0001-86', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
+    Subsidiary.create!(name: 'Guarulhos', cnpj: '76.415.862/0001-47', address: 'Rod. Hélio Smidt, s/nº')
 
     visit root_path
     click_on 'Filiais'
@@ -13,15 +13,15 @@ feature 'Admin view subsidiaries' do
   end
 
   scenario 'and view details' do
-    Subsidiary.create!(name: 'Campinas', cnpj: '00.000.000/0001-01', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
-    Subsidiary.create!(name: 'Guarulhos', cnpj: '00.000.000/0001-02', address: 'Rod. Hélio Smidt, s/nº')
+    Subsidiary.create!(name: 'Campinas', cnpj: '32.685.705/0001-86', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
+    Subsidiary.create!(name: 'Guarulhos', cnpj: '76.415.862/0001-47', address: 'Rod. Hélio Smidt, s/nº')
 
     visit root_path
     click_on 'Filiais'
     click_on 'Campinas'
 
     expect(page).to have_content('Campinas')
-    expect(page).to have_content('00.000.000/0001-01')
+    expect(page).to have_content('32.685.705/0001-86')
     expect(page).to have_content('Av. Imperatriz Dona Tereza Cristina, 11')
     expect(page).not_to have_content('Guarulhos')
   end
@@ -34,8 +34,8 @@ feature 'Admin view subsidiaries' do
   end
 
   scenario 'and return to home page' do
-    Subsidiary.create!(name: 'Campinas', cnpj: '00.000.000/0001-01', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
-    Subsidiary.create!(name: 'Guarulhos', cnpj: '00.000.000/0001-02', address: 'Rod. Hélio Smidt, s/nº')
+    Subsidiary.create!(name: 'Campinas', cnpj: '32.685.705/0001-86', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
+    Subsidiary.create!(name: 'Guarulhos', cnpj: '76.415.862/0001-47', address: 'Rod. Hélio Smidt, s/nº')
 
     visit root_path
     click_on 'Filiais'
@@ -45,8 +45,8 @@ feature 'Admin view subsidiaries' do
   end
 
   scenario 'and return to subsidiaries page' do
-    Subsidiary.create!(name: 'Campinas', cnpj: '00.000.000/0001-01', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
-    Subsidiary.create!(name: 'Guarulhos', cnpj: '00.000.000/0001-02', address: 'Rod. Hélio Smidt, s/nº')
+    Subsidiary.create!(name: 'Campinas', cnpj: '32.685.705/0001-86', address: 'Av. Imperatriz Dona Tereza Cristina, 11')
+    Subsidiary.create!(name: 'Guarulhos', cnpj: '76.415.862/0001-47', address: 'Rod. Hélio Smidt, s/nº')
 
     visit root_path
     click_on 'Filiais'

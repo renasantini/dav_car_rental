@@ -1,6 +1,10 @@
 <h1><%= @subsidiary.name %></h1>
 
-<p><%= @subsidiary.cnpj %></p>
-<p><%= @subsidiary.address %></p>
+<dl>
+  <dt>CNPJ:</dt>
+  <dd><%= @subsidiary.cnpj %></dd>
+  <dt>Endereço:</dt>
+  <dd><%= @subsidiary.address %></dd>
 
-<li><%= link_to 'Voltar', subsidiaries_path %></li>
+<p><%= link_to 'Editar', edit_subsidiary_path(@subsidiary) %></p>
+<p><%= link_to 'Voltar', subsidiaries_path %></p>

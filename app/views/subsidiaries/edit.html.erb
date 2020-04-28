@@ -1,11 +1,11 @@
-<h1>Registrar filial</h1>
+<h1>Editar filial</h1>
 
-<div>
-  <% @subsidiary.errors.full_messages.each do |message|%>
-    <p><%= message %></p>
-  <% end %>
+<% @subsidiary.errors.full_messages.each do |message|%>
+  <p><%= message %></p>
+<% end %>
 
-  <%= form_with(model: @subsidiary, local: true) do |f| %>
+<%= form_with(model: @subsidiary, local: true) do |f| %>
+  <div>
     <p>
       <%= f.label :name, 'Nome' %>
       <%= f.text_field :name %>
@@ -19,5 +19,5 @@
       <%= f.text_field :address %>
     </p>
     <%= f.submit 'Enviar' %>
-  <% end %>
-</div>
+  </div>
+<% end %>

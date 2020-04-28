@@ -1,6 +1,6 @@
 <h1>Categorias de veículos</h1>
 
-<li><%= link_to 'Registrar nova categoria', new_car_category_path %></li>
+<p><%= link_to 'Registrar nova categoria', new_car_category_path %></p>
 
 <% if @car_categories.empty? %>
   <p>Nenhuma categoria de veículo cadastrada.</p>
@@ -12,7 +12,7 @@
   </ul>
 <% end %>
 
-<li><%= link_to 'Voltar', root_path %></li>
+<p><%= link_to 'Voltar', root_path %></p>
 
 
 
