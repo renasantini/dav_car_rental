@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Admin register rental' do
-  scenario 'successfully' do
+  xscenario 'successfully' do
     customer = Customer.create!(name: 'Teste da Silva', 
                                 document: '185.972.440-03', 
                                 email: 'teste@teste.com.br')
@@ -29,7 +29,7 @@ feature 'Admin register rental' do
   xscenario 'and must fill in all fields' do
   end
 
-  scenario 'and must be authenticated' do
+  xscenario 'and must be authenticated' do
     visit new_rental_path
 
     expect(current_path).to eq(new_user_session_path)
