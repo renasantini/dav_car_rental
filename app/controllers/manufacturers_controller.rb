@@ -1,11 +1,11 @@
 class ManufacturersController < ApplicationController
+  before_action :set_manufacturer, only: [:show, :edit, :update]
+  
   def index
     @manufacturers = Manufacturer.all
   end
 
   def show
-    id = params[:id]
-    @manufacturer = Manufacturer.find(id)
   end
     
   def new
@@ -23,11 +23,9 @@ class ManufacturersController < ApplicationController
   end
 
   def edit
-    @manufacturer = Manufacturer.find(params[:id])
   end
 
   def update
-    @manufacturer = Manufacturer.find(params[:id])
     if @manufacturer.update(manufacturer_params)
       flash[:notice] = 'Fabricante editado com sucesso'
       redirect_to @manufacturer
@@ -45,6 +43,10 @@ class ManufacturersController < ApplicationController
 
 
   private
+
+  def set_manufacturer
+    @manufacturer = Manufacturer.find(params[:id])
+  end
 
   def manufacturer_params
     params.require(:manufacturer).permit(:name)
