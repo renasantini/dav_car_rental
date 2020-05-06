@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 feature 'Admin register rental' do
-  xscenario 'successfully' do
+  scenario 'successfully' do
     customer = Customer.create!(name: 'Teste da Silva', 
                                 document: '185.972.440-03', 
                                 email: 'teste@teste.com.br')
     car_category = CarCategory.create!(name: 'A', daily_rate: 100, 
-                                       car_insurance: 100,
-                                       third_part_insurance: 100)
+                                       car_insurance: 50,
+                                       third_party_insurance: 25)
     user = User.create!(email: 'test@test.com.br', password: '12345678')
 
     login_as user, scope: :user
@@ -27,6 +27,24 @@ feature 'Admin register rental' do
   end
 
   xscenario 'and must fill in all fields' do
+    customer = Customer.create!(name: 'Teste da Silva', 
+                                document: '185.972.440-03', 
+                                email: 'teste@teste.com.br')
+    car_category = CarCategory.create!(name: 'A', daily_rate: 100, 
+                                       car_insurance: 100,
+                                       third_part_insurance: 100)
+    user = User.create!(email: 'test@test.com.br', password: '12345678')
+
+    login_as user, scope: :user
+    visit root_path
+    click_on 'Locações'
+    click_on 'Registrar nova locação'
+    click_on 'Enviar'
+
+    expect(page).to have_content('Data de início: 27/04/2030')
+    expect(page).to have_content('Data de término: 29/04/2030')
+    expect(page).to have_content("Cliente: #{customer.name}")
+    expect(page).to have_content("Categoria: #{car_category.name}")
   end
 
   xscenario 'and must be authenticated' do
