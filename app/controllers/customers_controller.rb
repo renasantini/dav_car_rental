@@ -18,6 +18,12 @@ class CustomersController < ApplicationController
     redirect_to @customer
   end
 
+  def search
+    @q = params[:q]
+    @customers = Customer.search(@q)
+    render :index
+  end
+
   private
 
   def customer_params
