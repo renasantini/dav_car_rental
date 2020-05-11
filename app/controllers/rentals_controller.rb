@@ -5,11 +5,6 @@ class RentalsController < ApplicationController
     @rentals = Rental.all
   end
   
-
-  def show
-    @rental = Rental.find(params[:id])
-  end
-    
   def new
     @rental = Rental.new
   end
@@ -20,6 +15,10 @@ class RentalsController < ApplicationController
     redirect_to @rental
   end
 
+  def search
+    @q = params[:q]
+    @rental = Rental.find_by(code: @q.upcase)
+  end
 
   private
 
