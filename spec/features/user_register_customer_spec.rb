@@ -2,6 +2,9 @@ require 'rails_helper'
 
 feature 'User register customer' do 
   scenario 'succesfully' do
+    user = User.create!(email: 'test@test.com.br', password: '12345678')
+    
+    login_as user, scope: :user
     visit root_path
     click_on 'Cadastre-se'
 

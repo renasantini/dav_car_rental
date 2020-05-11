@@ -6,7 +6,9 @@ feature 'Admin register car models' do
     car_category = CarCategory.create!(name: 'Compacto', daily_rate: 100, 
                                        car_insurance: 20, 
                                        third_party_insurance: 10)
-
+    user = User.create!(email: 'test@test.com.br', password: '12345678')
+    
+    login_as user, scope: :user
     visit root_path
     click_on 'Modelos de veículos'
     click_on 'Registrar modelo de veículo'
