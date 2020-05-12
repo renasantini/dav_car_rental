@@ -20,6 +20,11 @@ class RentalsController < ApplicationController
     @rental = Rental.find_by(code: @q.upcase)
   end
 
+  def show
+    id = params[:id]
+    @rental = Rental.find(id)
+  end
+
   private
 
   def rental_params
